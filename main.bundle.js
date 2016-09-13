@@ -44,13 +44,11 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	'use strict';
-
-	var sayHello = function sayHello() {
-	  return console.log('Hello');
-	};
-
-	sayHello();
+	// var $ = require('jquery');
+	// var makeBanana = require('./banana.js');
+	// // var _ = require('lodash');
+	//
+	// makeBanana();
 
 /***/ }
 /******/ ]);
