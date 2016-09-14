@@ -37,10 +37,10 @@ describe('Block', function(){
   })
 
   it("moveRight should increment the 'x' property by 1", function(){
-    var options = { x: 66 }
+    var options = { x: 1 }
     var block = new Block(options);
     block.moveRight();
-    assert.equal(block.x, 67)
+    assert.equal(block.x, 2)
   })
 
   it("should have a method called 'moveLeft'", function(){
@@ -49,10 +49,10 @@ describe('Block', function(){
   })
 
   it("moveLeft should decrement the 'x' property by 1", function(){
-    var options = { x: 66 }
+    var options = { x: 3 }
     var block = new Block(options);
     block.moveLeft();
-    assert.equal(block.x, 65)
+    assert.equal(block.x, 2)
   })
 
   it("should have a method called 'moveDown'", function(){
@@ -73,11 +73,40 @@ describe('Block', function(){
   })
 
   it("moveUp should increment the 'y' property by 1", function(){
-    var options = { y: 33 };
+    var options = { y: 3 };
     var block = new Block(options);
     block.moveUp();
-    assert.equal(block.y, 34);
+    assert.equal(block.y, 4);
   })
+
+  it("shold not be able to moveDown if it is at the bottom", function() {
+    var options = { y: 0 }
+    var block = new Block(options);
+    block.moveDown();
+    assert.equal(block.y, 0)
+  })
+
+  it("should not be able to moveUp if it is at the top", function() {
+    var options = { y: 4 };
+    var block = new Block(options);
+    block.moveUp();
+    assert.equal(block.y, 4);
+  })
+
+  it("should not be able to moveRight if it is at the far right", function() {
+    var options = { x: 4 }
+    var block = new Block(options);
+    block.moveRight();
+    assert.equal(block.x, 4)
+  })
+
+it ("should not be able to moveLeft if it is as the far left", function() {
+  var options = { x:0 }
+  var block = new Block(options);
+  block.moveLeft();
+  assert.equal(block.x, 0)
+})
+
 
   //make tests for edge cases, can't move down if at 0
 
