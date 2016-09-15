@@ -45,6 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(1);
+	var Cell = __webpack_require__(2);
 
 	$(document).ready(function () {
 	  // makeDivsForGrid(50, 50);
@@ -10144,6 +10145,59 @@
 	return jQuery;
 	} );
 
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	const $ = "jquery";
+
+	alert('hello');
+
+	function Cell(options) {
+	  var options = options || {};
+	  this.x = options.x || 0;
+	  this.y = options.y || 0;
+	  this.height = 100;
+	  this.width = 100;
+	  this.value = options.value || 0;
+	  this.world = options.world;
+	}
+
+	Cell.prototype.toPage = function () {
+	  alert('hello');
+	  debugger;
+	  var cell = new Cell();
+	  $('.one').append('<div>' + cell + '</div>');
+	};
+
+	Cell.prototype.toPage();
+
+	Cell.prototype.moveRight = function () {
+	  if (this.x < 4) {
+	    this.x++;
+	  }
+	};
+
+	Cell.prototype.moveLeft = function () {
+	  if (this.x > 0) {
+	    this.x--;
+	  }
+	};
+
+	Cell.prototype.moveDown = function () {
+	  if (this.y > 0) {
+	    this.y--;
+	  }
+	};
+
+	Cell.prototype.moveUp = function () {
+	  if (this.y < 4) {
+	    this.y++;
+	  }
+	};
+
+	module.exports = Cell;
 
 /***/ }
 /******/ ]);
