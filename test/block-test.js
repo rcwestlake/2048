@@ -108,7 +108,6 @@ it ("should not be able to moveLeft if it is as the far left", function() {
 })
 
 
-  //make tests for edge cases, can't move down if at 0
 
 
 
