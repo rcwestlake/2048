@@ -10152,7 +10152,6 @@
 	  this.height = 100;
 	  this.width = 100;
 	  this.value = options.value || 0;
-	  this.world = options.world;
 	}
 
 	Cell.prototype.toPage = function () {
@@ -10215,8 +10214,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/christinegamble/turing-fe/projects/gametime/2048/node_modules/mocha-loader/node_modules/css-loader/index.js!/Users/christinegamble/turing-fe/projects/gametime/2048/node_modules/mocha/mocha.css", function() {
-			var newContent = require("!!/Users/christinegamble/turing-fe/projects/gametime/2048/node_modules/mocha-loader/node_modules/css-loader/index.js!/Users/christinegamble/turing-fe/projects/gametime/2048/node_modules/mocha/mocha.css");
+		module.hot.accept("!!/Users/ryanwestlake/Documents/Turing/Projects/2048/node_modules/mocha-loader/node_modules/css-loader/index.js!/Users/ryanwestlake/Documents/Turing/Projects/2048/node_modules/mocha/mocha.css", function() {
+			var newContent = require("!!/Users/ryanwestlake/Documents/Turing/Projects/2048/node_modules/mocha-loader/node_modules/css-loader/index.js!/Users/ryanwestlake/Documents/Turing/Projects/2048/node_modules/mocha/mocha.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -10520,21 +10519,54 @@
 	    assert.equal(board.width, 400);
 	  });
 
-	  it("should have a blocks property, which starts as an empty array", function () {
+	  // it("should have a blocks property, which starts as an empty array", function() {
+	  //   var board = new Board();
+	  //   assert.isArray(board.blocks);
+	  // });
+	  //
+	  // it("has a function for adding block to board", function() {
+	  //   var board = new Board();
+	  //   assert.isFunction(board.addBlock);
+	  // });
+	  //
+	  // it("can add a block to the board", function() {
+	  //
+	  //   var board = new Board();
+	  //   board.addBlock();
+	  //   assert.equal(board.blocks.length, 1);
+	  // });
+
+	  it("should have a buildGrid function", function () {
 	    var board = new Board();
-	    assert.isArray(board.blocks);
+	    assert.isFunction(board.buildGrid);
 	  });
 
-	  it("has a function for adding block to board", function () {
+	  it("should make a grid with an array of 16 cells", function () {
 	    var board = new Board();
-	    assert.isFunction(board.addBlock);
+	    assert.isArray(board.buildGrid());
+	    var array = board.buildGrid(4, 4);
+	    assert.equal(array.length, 16);
 	  });
 
-	  it("can add a block to the board", function () {
-
+	  it("should make a grid with appropriate corresponding x-y coordinates and null value", function () {
 	    var board = new Board();
-	    board.addBlock();
-	    assert.equal(board.blocks.length, 1);
+	    var grid = board.buildGrid(4, 4);
+	    assert.deepEqual(grid[0], { x: 0, y: 0, value: null });
+	    assert.deepEqual(grid[1], { x: 0, y: 1, value: null });
+	    assert.deepEqual(grid[2], { x: 0, y: 2, value: null });
+	    assert.deepEqual(grid[3], { x: 0, y: 3, value: null });
+	    assert.deepEqual(grid[4], { x: 1, y: 0, value: null });
+	    assert.deepEqual(grid[5], { x: 1, y: 1, value: null });
+	    assert.deepEqual(grid[6], { x: 1, y: 2, value: null });
+	    assert.deepEqual(grid[7], { x: 1, y: 3, value: null });
+	    assert.deepEqual(grid[8], { x: 2, y: 0, value: null });
+	    assert.deepEqual(grid[9], { x: 2, y: 1, value: null });
+	    assert.deepEqual(grid[10], { x: 2, y: 2, value: null });
+	    assert.deepEqual(grid[11], { x: 2, y: 3, value: null });
+	    assert.deepEqual(grid[12], { x: 3, y: 0, value: null });
+	    assert.deepEqual(grid[13], { x: 3, y: 1, value: null });
+	    assert.deepEqual(grid[14], { x: 3, y: 2, value: null });
+	    assert.deepEqual(grid[15], { x: 3, y: 3, value: null });
 	  });
 	});
 
@@ -18847,16 +18879,6 @@
 
 	// better function to build cells with
 
-	function buildGrid(x, y) {
-	  var cellArray = [];
-	  for (var i = 0; i < x; i++) {
-	    for (var j = 0; j < y; j++) {
-	      cellArray.push({ x: i, y: j, value: null });
-	    }
-	  }
-	  return cellArray;
-	};
-
 	function Board(x, y, height, width) {
 	  this.column = 4;
 	  this.row = 4;
@@ -18866,13 +18888,24 @@
 	  this.width = width || 400;
 	}
 
-	Board.prototype.blocks = [];
-
-	Board.prototype.addBlock = function (opts) {
-	  var block = new Block(opts);
-
-	  this.blocks.push(block);
+	Board.prototype.buildGrid = function (x, y) {
+	  var cellArray = [];
+	  for (var i = 0; i < x; i++) {
+	    for (var j = 0; j < y; j++) {
+	      cellArray.push({ x: i, y: j, value: null });
+	    }
+	  }
+	  return cellArray;
 	};
+
+	// Board.prototype.blocks = [];
+	//
+	// Board.prototype.addBlock = function(opts) {
+	//   var block = new Block(opts);
+	//
+	//   this.blocks.push(block);
+	// };
+
 
 	module.exports = Board;
 
@@ -18882,115 +18915,6 @@
 
 	var assert = __webpack_require__(13).assert;
 	var Cell = __webpack_require__(2);
-
-	describe('Cell', function () {
-	  it('should be a function', function () {});
-
-	  it("should take x property and set it to an expected value", function () {
-	    var options = { x: 66 };
-	    var cell = new Cell(options);
-	    assert.equal(cell.x, 66);
-	  });
-
-	  it("should take take the y property and set it to an expected value", function () {
-	    var options = { y: 33 };
-	    var cell = new Cell(options);
-	    assert.equal(cell.y, 33);
-	  });
-
-	  it("should take the 'width' property and set it to an expected value", function () {
-	    var options = { width: 100 };
-	    var cell = new Cell(options);
-	    assert.equal(cell.width, 100);
-	  });
-
-	  it("should take the height property and set it to an expected value", function () {
-	    var options = { height: 100 };
-	    var cell = new Cell(options);
-	    assert.equal(cell.height, 100);
-	  });
-
-	  it("should check to see if a new Cell is instantiated", function () {
-	    var cell = new Cell(options);
-	  });
-
-	  it("should have a method called 'moveRight'", function () {
-	    var options = {};
-	    var cell = new Cell();
-	    assert.isFunction(cell.moveRight);
-	  });
-
-	  it("moveRight should increment the 'x' property by 1", function () {
-	    var options = { x: 1 };
-	    var cell = new Cell(options);
-	    cell.moveRight();
-	    assert.equal(cell.x, 2);
-	  });
-
-	  it("should have a method called 'moveLeft'", function () {
-	    var cell = new Cell();
-	    assert.isFunction(cell.moveLeft);
-	  });
-
-	  it("moveLeft should decrement the 'x' property by 1", function () {
-	    var options = { x: 3 };
-	    var cell = new Cell(options);
-	    cell.moveLeft();
-	    assert.equal(cell.x, 2);
-	  });
-
-	  it("should have a method called 'moveDown'", function () {
-	    var cell = new Cell();
-	    assert.isFunction(cell.moveDown);
-	  });
-
-	  it("moveDown should decrement the 'y' property by 1", function () {
-	    var options = { y: 33 };
-	    var cell = new Cell(options);
-	    cell.moveDown();
-	    assert.equal(cell.y, 32);
-	  });
-
-	  it("should have a method called 'moveUp'", function () {
-	    var cell = new Cell();
-	    assert.isFunction(cell.moveUp);
-	  });
-
-	  it("moveUp should increment the 'y' property by 1", function () {
-	    var options = { y: 3 };
-	    var cell = new Cell(options);
-	    cell.moveUp();
-	    assert.equal(cell.y, 4);
-	  });
-
-	  it("shold not be able to moveDown if it is at the bottom", function () {
-	    var options = { y: 0 };
-	    var cell = new Cell(options);
-	    cell.moveDown();
-	    assert.equal(cell.y, 0);
-	  });
-
-	  it("should not be able to moveUp if it is at the top", function () {
-	    var options = { y: 4 };
-	    var cell = new Cell(options);
-	    cell.moveUp();
-	    assert.equal(cell.y, 4);
-	  });
-
-	  it("should not be able to moveRight if it is at the far right", function () {
-	    var options = { x: 4 };
-	    var cell = new Cell(options);
-	    cell.moveRight();
-	    assert.equal(cell.x, 4);
-	  });
-
-	  it("should not be able to moveLeft if it is as the far left", function () {
-	    var options = { x: 0 };
-	    var cell = new Cell(options);
-	    cell.moveLeft();
-	    assert.equal(cell.x, 0);
-	  });
-	});
 
 /***/ },
 /* 55 */

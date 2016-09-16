@@ -83,4 +83,13 @@ describe("create board test", function() {
     assert.deepEqual(grid[15], {x:3, y:3, value: null});
   });
 
+  it("should change the value of the first object in the buildGrid array", function(){
+
+    var board = new Board();
+    var grid = board.buildGrid(4,4);
+    debugger;
+    board.changeValue(2);
+    assert.deepEqual(grid[2].value, 1);
+  });
+
 });

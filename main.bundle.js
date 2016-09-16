@@ -10150,7 +10150,6 @@
 	  this.height = 100;
 	  this.width = 100;
 	  this.value = options.value || 0;
-	  this.world = options.world;
 	}
 
 	Cell.prototype.toPage = function () {
