@@ -31,7 +31,7 @@ describe('Cell', function(){
   });
 
 
-it("should check to see if a new Cell is instantiated", function(){
+it.skip("should check to see if a new Cell is instantiated", function(){
   var cell = new Cell(options);
 });
 

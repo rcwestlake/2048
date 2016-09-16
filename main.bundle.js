@@ -51,15 +51,6 @@
 	  // makeDivsForGrid(50, 50);
 	});
 
-	function Block(x, y) {
-	  this.x = x;
-	  this.y = y;
-	  this.width = 98;
-	  this.height = 98;
-	}
-
-	Block.prototype;
-
 	//constructor or prototype to make blocks
 
 
@@ -10148,11 +10139,9 @@
 
 /***/ },
 /* 2 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	const $ = "jquery";
-
-	alert('hello');
+	var $ = __webpack_require__(1);
 
 	function Cell(options) {
 	  var options = options || {};
@@ -10165,10 +10154,11 @@
 	}
 
 	Cell.prototype.toPage = function () {
-	  alert('hello');
-	  debugger;
+
 	  var cell = new Cell();
-	  $('.one').append('<div>' + cell + '</div>');
+	  cell.x = 1;
+	  cell.y = 1;
+	  $('.grid-row').append('<td>' + cell + '</td>');
 	};
 
 	Cell.prototype.toPage();
