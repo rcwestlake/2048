@@ -3,12 +3,13 @@ html {
 }
 
 body {
+  font-family: 'Open Sans', sans-serif;
   height: 100vh;
   width: 100vw;
 }
 
 h1 {
-  background-color: yellow;
+  background-color: #edc22e;
   height: 125px;
   width: 125px;
   margin: 10px auto;
@@ -25,15 +26,15 @@ h1 {
 }
 
 .l-game-grid {
+  background-color: #bbada0;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  background-color: #bbada0;
+  float: left;
   height: 600px;
   width: 600px;
-  float: left;
 }
 
 .grid-cell {
@@ -58,7 +59,63 @@ footer {
   display: block;
 }
 
-.two {
+.tile2 {
   background-color: #eee4da;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
 }
+
+.tile4 {
+  background-color: #ede0c8;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
+}
+
+.tile8 {
+  color: #f9f6f2;
+  background-color: #f2b179;
+}
+
+.tile16 {
+  color: #f9f6f2;
+  background-color: #f59563;
+}
+
+.tile32 {
+  color: #f9f6f2;
+  background-color: #f67c5f;
+}
+
+.tile64 {
+  color: #f9f6f2;
+  background-color: #f65e3b;
+}
+
+.tile128 {
+  color: #f9f6f2;
+  background-color: #edcf72;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
+  font-size: 45px;
+}
+
+.tile256 {
+  color: #f9f6f2;
+  background-color: #edcc61;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+}
+
+.tile512 {
+  color: #f9f6f2;
+ background-color: #edc850;
+ box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+}
+
+.tile1024 {
+  color: #f9f6f2;
+  background: #edc850;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+ }
+
+ .tile2048 {
+  color: #f9f6f2;
+  background: #edc22e;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+ }
