@@ -45,26 +45,25 @@ describe("create board test", function() {
   it("should make a grid with appropriate corresponding x-y coordinates and null value", function() {
     var board = new Board();
     var grid = board.buildGrid(4,4);
-    assert.deepEqual(grid[0], {x:0, y:0, value: null});
-    assert.deepEqual(grid[1], {x:0, y:1, value: null});
-    assert.deepEqual(grid[2], {x:0, y:2, value: null});
-    assert.deepEqual(grid[3], {x:0, y:3, value: null});
-    assert.deepEqual(grid[4], {x:1, y:0, value: null});
-    assert.deepEqual(grid[5], {x:1, y:1, value: null});
-    assert.deepEqual(grid[6], {x:1, y:2, value: null});
-    assert.deepEqual(grid[7], {x:1, y:3, value: null});
-    assert.deepEqual(grid[8], {x:2, y:0, value: null});
-    assert.deepEqual(grid[9], {x:2, y:1, value: null});
-    assert.deepEqual(grid[10], {x:2, y:2, value: null});
-    assert.deepEqual(grid[11], {x:2, y:3, value: null});
-    assert.deepEqual(grid[12], {x:3, y:0, value: null});
-    assert.deepEqual(grid[13], {x:3, y:1, value: null});
-    assert.deepEqual(grid[14], {x:3, y:2, value: null});
-    assert.deepEqual(grid[15], {x:3, y:3, value: null});
+    assert.deepEqual(grid[0], {row:0, column:0, value: null});
+    assert.deepEqual(grid[1], {row:0, column:1, value: null});
+    assert.deepEqual(grid[2], {row:0, column:2, value: null});
+    assert.deepEqual(grid[3], {row:0, column:3, value: null});
+    assert.deepEqual(grid[4], {row:1, column:0, value: null});
+    assert.deepEqual(grid[5], {row:1, column:1, value: null});
+    assert.deepEqual(grid[6], {row:1, column:2, value: null});
+    assert.deepEqual(grid[7], {row:1, column:3, value: null});
+    assert.deepEqual(grid[8], {row:2, column:0, value: null});
+    assert.deepEqual(grid[9], {row:2, column:1, value: null});
+    assert.deepEqual(grid[10], {row:2, column:2, value: null});
+    assert.deepEqual(grid[11], {row:2, column:3, value: null});
+    assert.deepEqual(grid[12], {row:3, column:0, value: null});
+    assert.deepEqual(grid[13], {row:3, column:1, value: null});
+    assert.deepEqual(grid[14], {row:3, column:2, value: null});
+    assert.deepEqual(grid[15], {row:3, column:3, value: null});
   });
 
   it("should change the value of the first object in the buildGrid array", function(){
-
     var board = new Board();
     var grid = board.buildGrid(4,4);
     board.changeValue(2);
@@ -76,13 +75,25 @@ describe("create board test", function() {
     board.buildGrid(4,4);
     var result = board.checkAvailalbeCells();
     assert.equal(result.length, 16);
-    // board.changeValue(2);
+    board.changeValue(2);
+    var resultTwo = board.checkAvailalbeCells();
+    assert.deepEqual(resultTwo.length, 15);
+  });
+});
 
-    // assert.equal(result.length, 15);
-
+  it("should generate a random number based on the availableCells", function(){
+    var board = new Board();
+    board.cells = [ {row: 0, column: 0, value: null}, {row: 0, column: 1, value: null} ];
+    var randomNum = board.randomNumber();
+    assert(randomNum <=2);
   });
 
-});
+  it("should give a value of 2 to a random available cell", function(){
+    var board = new Board();
+    board.cells = [ {row: 0, column: 0, value: null} ];
+    board.addValueToAvailableCell();
+    assert.equal(board.cells[0].value, 2);
+  });
 
 
 describe("initial conditions", function(){

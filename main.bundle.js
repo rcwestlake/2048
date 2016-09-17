@@ -10139,54 +10139,44 @@
 
 /***/ },
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	var $ = __webpack_require__(1);
-
-	function Cell(options) {
-	  var options = options || {};
-	  this.x = options.x || 0;
-	  this.y = options.y || 0;
-	  this.height = 100;
-	  this.width = 100;
-	  this.value = options.value || 0;
+	function Board(row, column) {
+	  this.row = row || 4;
+	  this.column = column || 4;
+	  this.cells = [];
 	}
 
-	Cell.prototype.toPage = function () {
+	Board.prototype.buildGrid = function (x, y) {
+	  for (var i = 0; i < x; i++) {
+	    for (var j = 0; j < y; j++) {
 
-	  var cell = new Cell();
-	  cell.x = 1;
-	  cell.y = 1;
-	  $('.grid-row').append('<td>' + cell + '</td>');
-	};
-
-	Cell.prototype.toPage();
-
-	Cell.prototype.moveRight = function () {
-	  if (this.x < 4) {
-	    this.x++;
+	      this.cells.push({ x: i, y: j, value: null });
+	    }
 	  }
+	  return this.cells;
 	};
 
-	Cell.prototype.moveLeft = function () {
-	  if (this.x > 0) {
-	    this.x--;
-	  }
+	Board.prototype.createNewGrid = function () {
+	  return this.buildGrid(4, 4);
 	};
 
-	Cell.prototype.moveDown = function () {
-	  if (this.y > 0) {
-	    this.y--;
-	  }
+	Board.prototype.changeValue = function (index) {
+	  ++this.cells[index].value;
 	};
 
-	Cell.prototype.moveUp = function () {
-	  if (this.y < 4) {
-	    this.y++;
-	  }
+	Board.prototype.randomNumber = function () {
+	  return Math.floor(Math.random * cells.length); //write the rest of this
 	};
 
-	module.exports = Cell;
+	Board.prototype.checkAvailalbeCells = function () {
+	  var availabe = this.cells.filter(function (item, index, array) {
+	    return item.value === null;
+	  });
+	  return availabe;
+	};
+
+	module.exports = Board;
 
 /***/ }
 /******/ ]);
