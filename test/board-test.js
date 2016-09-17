@@ -2,7 +2,7 @@ var assert = require ("chai").assert;
 var Board = require ("../lib/board.js");
 
 
-describe("create board test", function() {
+describe("board", function() {
   it("should have a column", function() {
     var board = new Board();
     assert.equal(board.column, 4);
@@ -13,22 +13,6 @@ describe("create board test", function() {
     assert.equal(board.row, 4);
   });
 
-  // it("should have a blocks property, which starts as an empty array", function() {
-  //   var board = new Board();
-  //   assert.isArray(board.blocks);
-  // });
-  //
-  // it("has a function for adding block to board", function() {
-  //   var board = new Board();
-  //   assert.isFunction(board.addBlock);
-  // });
-  //
-  // it("can add a block to the board", function() {
-  //
-  //   var board = new Board();
-  //   board.addBlock();
-  //   assert.equal(board.blocks.length, 1);
-  // });
 
   it("should have a buildGrid function", function() {
     var board = new Board();
@@ -79,7 +63,6 @@ describe("create board test", function() {
     var resultTwo = board.checkAvailalbeCells();
     assert.deepEqual(resultTwo.length, 15);
   });
-});
 
   it("should generate a random number based on the availableCells", function(){
     var board = new Board();
@@ -94,19 +77,13 @@ describe("create board test", function() {
     board.addValueToAvailableCell();
     assert.equal(board.cells[0].value, 2);
   });
+});
 
+describe("moving values", function() {
 
-describe("initial conditions", function(){
+  it.skip();
 
-  it.skip("looks for availableCells and gives two cells a value of 2", function(){
-    // look for null values
-    // place the x , y of the null objects in the array
-    // generate a random number for the x value
-    // generate a random number for the y value 0 - 3
-  });
-
-  it.skip("randomly assign the inital two cells");
-
+  it.skip();
 
 
 });
