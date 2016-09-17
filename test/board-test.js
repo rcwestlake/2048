@@ -13,26 +13,6 @@ describe("create board test", function() {
     assert.equal(board.row, 4);
   });
 
-  it("should have a x value", function() {
-    var board = new Board();
-    assert.equal(board.x, 0);
-  });
-
-  it("should have a y value", function() {
-    var board = new Board();
-    assert.equal(board.y, 0);
-  });
-
-  it("should have a default height", function() {
-    var board = new Board();
-    assert.equal(board.height, 400);
-  });
-
-  it("should have a default width", function() {
-    var board = new Board();
-    assert.equal(board.width, 400);
-  });
-
   // it("should have a blocks property, which starts as an empty array", function() {
   //   var board = new Board();
   //   assert.isArray(board.blocks);
@@ -87,9 +67,35 @@ describe("create board test", function() {
 
     var board = new Board();
     var grid = board.buildGrid(4,4);
-    debugger;
     board.changeValue(2);
     assert.deepEqual(grid[2].value, 1);
   });
+
+  it("should calculate the number of cells with a value of null", function(){
+    var board = new Board();
+    board.buildGrid(4,4);
+    var result = board.checkAvailalbeCells();
+    assert.equal(result.length, 16);
+    // board.changeValue(2);
+
+    // assert.equal(result.length, 15);
+
+  });
+
+});
+
+
+describe("initial conditions", function(){
+
+  it.skip("looks for availableCells and gives two cells a value of 2", function(){
+    // look for null values
+    // place the x , y of the null objects in the array
+    // generate a random number for the x value
+    // generate a random number for the y value 0 - 3
+  });
+
+  it.skip("randomly assign the inital two cells");
+
+
 
 });
