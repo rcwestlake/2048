@@ -3,8 +3,60 @@
 <head>
   <meta charset="utf-8">
   <title>Game Time</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" >
 </head>
 <body>
+  <header>
+    <h1 class="title">2048 Game</h1>
+    <p class="instructions"></p>
+  </header>
+
+  <section class="l-game-container">
+    <table class="l-game-grid">
+      <tr class= "grid-row">
+        <td id="A1" class = "grid-cell A"></td>
+        <td id="A2" class = "grid-cell A"></td>
+        <td id="A3" class = "grid-cell A"></td>
+        <td id="A4" class = "grid-cell A"></td>
+      </tr>
+      <tr class= "grid-row">
+        <td id="B1" class = "grid-cell B"></td>
+        <td id="B2" class = "grid-cell B"></td>
+        <td id="B3" class = "grid-cell B"></td>
+        <td id="B4" class = "grid-cell B"></td>
+      </tr>
+      <tr class= "grid-row">
+        <td id="C1" class = "grid-cell C"></td>
+        <td id="C2" class = "grid-cell C"></td>
+        <td id="C3" class = "grid-cell C"></td>
+        <td id="C4" class = "grid-cell C"></td>
+      </tr>
+      <tr class= "grid-row">
+        <td id="D1" class = "grid-cell D"></td>
+        <td id="D2" class = "grid-cell D"></td>
+        <td id="D3" class = "grid-cell D"></td>
+        <td id="D4" class = "grid-cell D"></td>
+      </tr>
+    </section>
+
+    <aside class="l-sidebar">
+      <div class="score-container">
+        <p>Score</p>
+        <p class="current-score"></p>
+      </div>
+      <div class="high-score-container">
+        <p>Score</p>
+        <p class="high-score"></p>
+      </div>
+      <button type="button" name="button" class="new-game-button">New Game</button>
+    </aside>
+  </section>
+
+
+  <footer>
+    <p>Powered by Ryan Westlake & Christine Gamble</p>
+  </footer>
 
   <script src="main.bundle.js"></script>
 </body>
