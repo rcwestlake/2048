@@ -79,6 +79,53 @@ describe("board", function() {
   });
 });
 
+describe("finding cells", function(){
+  var board = new Board();
+  board.cells = [
+      {row: 0, column: 0, value: 2},
+      {row: 0, column: 1, value: 4},
+      {row: 0, column: 2, value: null},
+      {row: 0, column: 3, value: 16}
+    ];
+
+  it("should confirm findCell is a function", function(){
+    var board = new Board();
+    assert.isFunction(board.findCell);
+  });
+
+  it("should return the 1 cell with a row of 0, column of 0, and value of 2", function(){
+    var row = 0;
+    var column = 0;
+    var targetedCell = board.findCell(row, column);
+    assert.equal(targetedCell.length, 1);
+    assert.equal(targetedCell[0].value, 2);
+  });
+
+  it("should return the 1 cell with a row of 0, column of 1, and value of 4", function(){
+    var row = 0;
+    var column = 1;
+    var targetedCell = board.findCell(row, column);
+    assert.equal(targetedCell.length, 1);
+    assert.equal(targetedCell[0].value, 4);
+  });
+
+  it("should return the 1 cell with a row of 0, column of 2, and value of null", function(){
+    var row = 0;
+    var column = 2;
+    var targetedCell = board.findCell(row, column);
+    assert.equal(targetedCell.length, 1);
+    assert.equal(targetedCell[0].value, null);
+  });
+
+  it("should return the 1 cell with a row of 0, column of 3, and value of 16", function(){
+    var row = 0;
+    var column = 3;
+    var targetedCell = board.findCell(row, column);
+    assert.equal(targetedCell.length, 1);
+    assert.equal(targetedCell[0].value, 16);
+  });
+});
+
 describe("moving values", function() {
 
   it.skip();
