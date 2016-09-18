@@ -128,7 +128,33 @@ describe("finding cells", function(){
 
 describe("moving values", function() {
 
-  it.skip();
+  var board = new Board();
+  board.cells = [
+      {row: 0, column: 0, value: 2},
+      {row: 0, column: 1, value: 2},
+      {row: 0, column: 2, value: null},
+      {row: 0, column: 3, value: null},
+      {row: 1, column: 0, value: 2},
+      {row: 1, column: 1, value: 2},
+      {row: 1, column: 2, value: null},
+      {row: 1, column: 3, value: null},
+      {row: 2, column: 0, value: 2},
+      {row: 2, column: 1, value: 2},
+      {row: 2, column: 2, value: null},
+      {row: 2, column: 3, value: null},
+      {row: 3, column: 0, value: 2},
+      {row: 3, column: 1, value: 2},
+      {row: 3, column: 2, value: null},
+      {row: 3, column: 3, value: null},
+    ];
+
+  it("should change the value of the first cell", function(){
+    board.checkAndChangeValuePositive(0, 0);
+    debugger;
+    assert.equal(board.cells[0].value, 4);
+    assert.equal(board.cells[1].value, null);
+    assert.equal(board.cells[2].value, null);
+  });
 
   it.skip();
 
