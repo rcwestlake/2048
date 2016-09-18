@@ -12,17 +12,15 @@ h1 {
   background-color: #edc22e;
   height: 125px;
   width: 125px;
-  margin: 10px auto;
+  margin: auto;
+  margin-top: 50px;
   text-align: center;
 }
 
 .l-game-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  width: 600px;
+  margin: auto;
+  height: 20px;
 }
 
 .l-game-grid {
@@ -32,7 +30,6 @@ h1 {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  float: left;
   height: 600px;
   width: 600px;
 }
@@ -54,11 +51,16 @@ h1 {
 .l-sidebar {
   height: 100%;
   width: 200px;
-  float: right;
+  position: relative;
+  top: 200px;
+  left: 650px;
 }
 
 footer {
   display: block;
+  margin: auto;
+  width: 600px;
+  text-align: center;
 }
 
 .tile2 {
