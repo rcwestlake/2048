@@ -131,10 +131,10 @@ describe("moving values", function() {
   var board = new Board();
   board.cells = [
       {row: 0, column: 0, value: 2},
-      {row: 0, column: 1, value: 2},
+      {row: 0, column: 1, value: null},
       {row: 0, column: 2, value: null},
-      {row: 0, column: 3, value: null},
-      {row: 1, column: 0, value: 2},
+      {row: 0, column: 3, value: 2},
+      {row: 1, column: 0, value: 4},
       {row: 1, column: 1, value: 2},
       {row: 1, column: 2, value: null},
       {row: 1, column: 3, value: null},
@@ -143,20 +143,23 @@ describe("moving values", function() {
       {row: 2, column: 2, value: null},
       {row: 2, column: 3, value: null},
       {row: 3, column: 0, value: 2},
-      {row: 3, column: 1, value: 2},
-      {row: 3, column: 2, value: null},
-      {row: 3, column: 3, value: null},
+      {row: 3, column: 1, value: null},
+      {row: 3, column: 2, value: 2},
+      {row: 3, column: 3, value: null}
     ];
 
   it("should change the value of the first cell", function(){
-    board.checkAndChangeValuePositive(0, 0);
-    debugger;
-    assert.equal(board.cells[0].value, 4);
+    board.checkAndChangeValue(3, 0);
+    assert.equal(board.cells[10].value, null);
+    assert.equal(board.cells[0].value, 2);
     assert.equal(board.cells[1].value, null);
-    assert.equal(board.cells[2].value, null);
   });
 
-  it.skip();
+  it("should move the value of 2 and put it in the null spot", function(){
+    board.checkAndChangeValue(3, 0);
+    assert.equal(board.cells[12].value, 4);
+    assert.equal(board.cells[13].value, null);
+  });
 
 
 });
