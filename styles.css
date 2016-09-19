@@ -4,6 +4,7 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
   height: 100vh;
   width: 100vw;
 }
@@ -13,7 +14,7 @@ h1 {
   height: 125px;
   width: 125px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 25px;
   text-align: center;
 }
 
@@ -59,8 +60,11 @@ h1 {
 footer {
   display: block;
   margin: auto;
+  margin-bottom: 30px;
   width: 600px;
   text-align: center;
+  position: relative;
+  top: 675px;
 }
 
 .tile2 {
@@ -123,3 +127,73 @@ footer {
   background: #edc22e;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
  }
+
+ /**/
+
+ @media screen and (max-width: 725px){
+   body {
+     height: 80vh;
+   }
+   .l-game-container{
+     width: 400px;
+     margin: auto;
+   }
+
+   .l-game-grid{
+     height: 400px;
+     width: 400px;
+
+     bottom: 200px;
+   }
+
+   .grid-cell {
+     border-radius: 2px;
+     height: 83.3px;
+     width: 83.3px;
+     margin-right: 10px;
+     margin-bottom: 6px;
+   }
+
+   .l-sidebar {
+     left: 420px;
+   }
+
+   footer {
+     width: 400px;
+     top: 500px;
+
+   }
+ }
+
+@media screen and (max-width: 400px) {
+
+
+
+.l-game-container{
+  width: 300px;
+  margin: auto;
+}
+
+.l-game-grid{
+  height: 300px;
+  width: 300px;
+}
+
+.l-sidebar {
+  left: 120px;
+  top: -10px;
+}
+
+.grid-cell {
+  border-radius: 1.5px;
+  height: 62.5px;
+  width: 62.5px;
+  margin-right: 7.5px;
+  margin-bottom: 4.5px;
+}
+
+footer {
+  width: 300px;
+  top: 450px;
+}
+}
