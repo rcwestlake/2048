@@ -67,19 +67,27 @@ describe("board", function() {
 
 
   });
-//
+
   it("should generate a random number based on the availableCells", function(){
-    var board = new Board();
-    board.cells = [ {row: 0, column: 0, value: 0}, {row: 0, column: 1, value: 0} ];
-    var randomNum = board.randomNumber();
-    assert(randomNum <=2);
+    var board = new Board(
+      4, 4, 4, 4,
+      8, 8, 8, 8,
+      16, 16, 16, 16,
+      0, 0, 0, 0
+    );
+    var randomNum = board.addValueToAvailableCell();
+    assert(randomNum <= 4);
   });
 
   it("should give a value of 2 to a random available cell", function(){
-    var board = new Board();
-    board.cells = [ {row: 0, column: 0, value: 0} ];
+    var board = new Board(
+      4, 4, 4, 4,
+      8, 8, 8, 8,
+      16, 16, 16, 16,
+      32, 32, 0, 32
+    );
     board.addValueToAvailableCell();
-    assert.equal(board.cells[0].value, 2);
+    assert.equal(board.cells[14].value, 2 || 4);
   });
 });
 
