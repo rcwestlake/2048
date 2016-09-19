@@ -35,7 +35,7 @@ h1 {
   width: 600px;
 }
 
-.grid-cell {
+td {
   border-radius: 3px;
   background: rgba(238, 228, 218, 0.35);
   display: inline-block;
@@ -45,7 +45,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-.grid-cell:last-child {
+td:last-child {
   margin-right: 0;
 }
 
@@ -151,7 +151,7 @@ footer {
      bottom: 200px;
    }
 
-   .grid-cell {
+   td {
      border-radius: 2px;
      height: 83.3px;
      width: 83.3px;
@@ -189,7 +189,7 @@ footer {
   top: -10px;
 }
 
-.grid-cell {
+td {
   border-radius: 1.5px;
   height: 62.5px;
   width: 62.5px;
