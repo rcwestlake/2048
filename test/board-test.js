@@ -239,7 +239,7 @@ describe("testing game engine", function() {
     assert.equal(board.cells[1].value, 0);
   });
 
-  it("should combine after one move, not merge twice --- left", function(){
+  it("should combine and move left", function(){
     var board = new Board();
     board.cells = [
       new Cell(0, 0, 4),
@@ -266,28 +266,20 @@ describe("testing game engine", function() {
   });
 
   it("should combine and move up", function(){
-    var board = new Board();
-    board.cells = [
-      new Cell(0, 0, 2),
-      new Cell(0, 1, 2),
-      new Cell(0, 2, 0),
-      new Cell(0, 3, 2),
-      new Cell(1, 0, 2),
-      new Cell(1, 1, 0),
-      new Cell(1, 2, 0),
-      new Cell(1, 3, 2),
-      new Cell(2, 0, 2),
-      new Cell(2, 1, 0),
-      new Cell(2, 2, 0),
-      new Cell(2, 3, 2),
-      new Cell(3, 0, 2),
-      new Cell(3, 1, 0),
-      new Cell(3, 2, 0),
-      new Cell(3, 3, 2)
-    ];
+    var board = new Board(
+      2, 0, 16, 2,
+      2, 4, 0, 2,
+      0, 4, 16, 2,
+      2, 0, 8, 2
+    );
     board.checkAndChangeValue(2);
     assert.equal(board.cells[0].value, 4);
-    assert.equal(board.cells[0].value, 4);
+    assert.equal(board.cells[4].value, 2);
+    assert.equal(board.cells[2].value, 32);
+    assert.equal(board.cells[3].value, 4);
+    assert.equal(board.cells[7].value, 4);
+    assert.equal(board.cells[6].value, 8);
+
   });
 
 
