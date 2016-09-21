@@ -11,8 +11,20 @@
 <body>
   <header>
     <h1 class="title">2048 Game</h1>
-    <p class="instructions"></p>
+    <section class="game-manager-container">
+      <div class="score-container">
+        <p class="score-header">Score</p>
+        <p class="current-score">0</p>
+      </div>
+      <div class="high-score-container">
+        <p class="score-header">High Score</p>
+        <p class="high-score">0</p>
+      </div>
+      <button type="button" name="button" class="new-game-button">New Game</button>
+    </section>
   </header>
+
+  <p class="instructions">Click anywhere on the screen. Use your arrow keys (← ↑ → ↓) to move. Combine same values and get as high as you can.</p>
 
   <section class="l-game-container">
     <table class="l-game-grid">
@@ -41,19 +53,6 @@
         <td id="15" class = "grid-cell D"></td>
       </tr>
     </table>
-
-
-    <aside class="l-sidebar">
-      <div class="score-container">
-        <p>Score</p>
-        <p class="current-score"></p>
-      </div>
-      <div class="high-score-container">
-        <p>Score</p>
-        <p class="high-score"></p>
-      </div>
-      <button type="button" name="button" class="new-game-button">New Game</button>
-    </aside>
   </section>
 
 
