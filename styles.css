@@ -7,6 +7,9 @@ body {
 }
 
 header {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  text-align: center;
   width: 100%;
 }
 
@@ -15,13 +18,13 @@ h1 {
   border: 3px solid #000000;
   color: #edc22e;
   display: inline-block;
-  height: 145px;
-  width: 145px;
   font-size: 40px;
   font-weight: 800;
-  margin-top: 25px;
+  min-height: 140px;
+  padding: 0 5px;
+  padding-top: 10px;
   text-align: center;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 #logo-js {
@@ -32,9 +35,9 @@ button {
   background: rgba(0,0,0,0);
   border: solid 5px #07889B;
   color: #07889B;
+  display: block;
   font-size: 15px;
   font-weight: 600;
-  margin: auto;
   height: 50px;
   width: 150px;
 }
@@ -50,7 +53,16 @@ button:focus {
   outline: none;
 }
 
+.game-manager-container {
+  border: 3px solid #000000;
+  display: inline-block;
+  min-height: 150px;
+  padding: 0 8px;
+}
+
 .instructions-button {
+  margin-bottom: 50px;
+  text-align: center;
   width: 100%;
 }
 
@@ -59,18 +71,13 @@ button:focus {
 }
 
 .instructions {
+  display: inline-block;
   font-size: 15px;
   font-weight: 500;
-  margin: 10px auto;
-  width: 390px;
+  line-height: 18px;
+  max-width: 390px;
 }
 
-.game-manager-container {
-  border: 3px solid #000000;
-  display: inline-block;
-  height: 100%;
-  width: 145px;
-}
 
 .score-container {
   text-align: center;
@@ -99,11 +106,10 @@ button:focus {
   text-align: center;
 }
 
-
 .l-game-container {
   height: 600px;
   width: 600px;
-  margin: 100px auto;
+  margin: 0 auto;
 }
 
 .l-game-grid {
