@@ -58,10 +58,10 @@ describe("board", function() {
     board.buildGrid(4,4);
     var result = board.checkAvailalbeCells();
     assert.equal(result.length, 16);
-    board.changeValue(2);
+    board.addValueToAvailableCell();
     var resultTwo = board.checkAvailalbeCells();
     assert.deepEqual(resultTwo.length, 15);
-    board.changeValue(3);
+    board.addValueToAvailableCell();
     var resultThree = board.checkAvailalbeCells();
     assert.deepEqual(resultThree.length, 14);
 
