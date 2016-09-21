@@ -10,7 +10,7 @@
 </head>
 <body>
   <header>
-    <h1 class="title">2048 Game</h1>
+    <h1 class="title">2048<span id="logo-js">JS</span></h1>
     <section class="game-manager-container">
       <div class="score-container">
         <p class="score-header">Score</p>
@@ -20,11 +20,13 @@
         <p class="score-header">High Score</p>
         <p class="high-score">0</p>
       </div>
-      <button type="button" name="button" class="new-game-button">New Game</button>
     </section>
   </header>
 
-  <p class="instructions">Click anywhere on the screen. Use your arrow keys (← ↑ → ↓) to move. Combine same values and get as high as you can.</p>
+  <section class="instructions-button">
+    <p class="instructions">Click anywhere on the screen. Use your arrow keys (← ↑ → ↓) to move. Combine same values and get as high as you can.</p>
+    <button type="button" name="button" class="new-game-button">New Game</button>
+  </section>
 
   <section class="l-game-container">
     <table class="l-game-grid">
