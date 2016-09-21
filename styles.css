@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Pontano Sans', sans-serif;
   font-size: 22px;
   height: 100vh;
   width: 100vw;
@@ -11,17 +11,42 @@ body {
 
 h1 {
   background-color: #edc22e;
+  background: #edc22e; /* fallback for old browsers */
+  color: white;
   height: 125px;
   width: 125px;
+  font-size: 40px;
+  font-weight: 800;
   margin: auto;
   margin-top: 25px;
   text-align: center;
+  vertical-align: middle;
+}
+
+button {
+  background: rgba(0,0,0,0);
+  border: solid 5px #07889B;
+  color: #07889B;
+  font-size: 15px;
+  font-weight: 600;
+  height: 50px;
+  width: 200px;
+}
+
+button:hover {
+  background: rgba(0,0,0,0);
+  border: solid 10px #07889B;
+  color: #07889B;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
 }
 
 .l-game-container {
-  width: 600px;
-  margin: auto;
-  height: 20px;
+  width: 800px;
+  margin: 100px auto;
 }
 
 .l-game-grid {
@@ -59,8 +84,8 @@ td:last-child {
 
 footer {
   display: block;
-  margin: auto;
-  margin-bottom: 30px;
+  font-size: 15px;
+  margin: 50px auto;
   width: 600px;
   text-align: center;
   position: relative;
@@ -132,7 +157,7 @@ footer {
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
  }
 
- /**/
+ /*RESPONSIVENESS*/
 
  @media screen and (max-width: 725px){
    body {
@@ -199,5 +224,4 @@ td {
 footer {
   width: 300px;
   top: 450px;
-}
 }
