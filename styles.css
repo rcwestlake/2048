@@ -192,23 +192,27 @@ footer {
 .tile64 {
   color: #f9f6f2;
   background-color: #BF382A;
+  animation: fadeIn 0.35s ease-in;
 }
 
 .tile128 {
   color: #f9f6f2;
   background-color: #edcc61;
+  animation: fadeIn 0.35s ease-in;
 }
 
 .tile256 {
   color: #f9f6f2;
   background-color: #F7E74A;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+  animation: fadeIn 0.35s ease-in;
 }
 
 .tile512 {
   color: #f9f6f2;
  background-color: #edc850;
  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+ animation: fadeIn 0.35s ease-in;
 }
 
 .tile1024 {
@@ -216,6 +220,7 @@ footer {
   background: #f9f6f2;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
   font-size: 35px;
+  animation: fadeIn 0.35s ease-in;
  }
 
  .tile2048 {
@@ -223,48 +228,56 @@ footer {
   background: #f9f6f2;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
   font-size: 35px;
+  animation: fadeIn 0.35s ease-in;
  }
 
  .tile4096 {
    color: #000000;
    background: #f9f6f2;
    font-size: 35px;
+   animation: fadeIn 0.35s ease-in;
   }
 
 .tile8192 {
   color: #000000;
   background: #f9f6f2;
   font-size: 35px;
+  animation: fadeIn 0.35s ease-in;
 }
 
 .tile16384 {
   color: #000000;
   background: #f9f6f2;
   font-size: 30px;
+  animation: fadeIn 0.35s ease-in;
 }
 
 .tile32768 {
   color: #000000;
   background: #f9f6f2;
   font-size: 30px;
+  animation: fadeIn 0.35s ease-in;
 }
 
 .tile65536 {
   color: #000000;
   background: #f9f6f2;
   font-size: 30px;
+  animation: fadeIn 0.35s ease-in;
 }
 
 .tile131072 {
   color: #000000;
   background: #f9f6f2;
   font-size: 25px;
+  animation: fadeIn 0.35s ease-in;
 }
 
 .tile262144 {
   color: #000000;
   background: #f9f6f2;
   font-size: 25px;
+  animation: fadeIn 0.35s ease-in;
 }
 
 /*ANIMATION*/
