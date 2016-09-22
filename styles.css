@@ -162,26 +162,31 @@ footer {
 .tile2 {
   background-color: #EA5455;
   color: #f9f6f2;
+  animation: fadeIn 0.35s ease-in;
 }
 
 .tile4 {
   background-color: #2794EB;
   color: #f9f6f2;
+  animation: fadeIn 0.35s ease-in;
 }
 
 .tile8 {
   color: #f9f6f2;
   background-color: #0077C0;
+  animation: fadeIn 0.35s ease-in;
 }
 
 .tile16 {
   color: #f9f6f2;
   background-color: #FF7676;
+  animation: fadeIn 0.35s ease-in;
 }
 
 .tile32 {
   color: #f9f6f2;
   background-color: #FF5656;
+  animation: fadeIn 0.35s ease-in;
 }
 
 .tile64 {
@@ -260,6 +265,27 @@ footer {
   color: #000000;
   background: #f9f6f2;
   font-size: 25px;
+}
+
+/*ANIMATION*/
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadeIn ease-in 1;
+	animation:fadeIn ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:1s;
+	-moz-animation-duration:1s;
+	animation-duration:1s;
 }
 
 
