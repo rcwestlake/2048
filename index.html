@@ -3,15 +3,30 @@
 <head>
   <meta charset="utf-8">
   <title>Game Time</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
+  <link rel="stylesheet" href="reset.css" >
   <link rel="stylesheet" href="styles.css" >
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=true;">
 </head>
 <body>
   <header>
-    <h1 class="title">2048 Game</h1>
-    <p class="instructions"></p>
+    <h1 class="title">2048<span id="logo-js">JS</span></h1>
+    <section class="game-manager-container">
+      <div class="score-container">
+        <p class="score-header">Score</p>
+        <p class="current-score">0</p>
+      </div>
+      <div class="high-score-container">
+        <p class="score-header">High Score</p>
+        <p class="high-score">0</p>
+      </div>
+    </section>
   </header>
+
+  <section class="instructions-button">
+    <p class="instructions">Click anywhere on the screen. Use your arrow keys (← ↑ → ↓) to move. Combine same values and get as high as you can.</p>
+    <button type="button" name="button" class="new-game-button">New Game</button>
+  </section>
 
   <section class="l-game-container">
     <table class="l-game-grid">
@@ -39,24 +54,12 @@
         <td id="14" class = "grid-cell D"></td>
         <td id="15" class = "grid-cell D"></td>
       </tr>
-    </section>
-
-    <aside class="l-sidebar">
-      <div class="score-container">
-        <p>Score</p>
-        <p class="current-score"></p>
-      </div>
-      <div class="high-score-container">
-        <p>Score</p>
-        <p class="high-score"></p>
-      </div>
-      <button type="button" name="button" class="new-game-button">New Game</button>
-    </aside>
+    </table>
   </section>
 
 
   <footer>
-    <p>Powered by Ryan Westlake & Christine Gamble</p>
+    <p>2048 is a popular IOS and Andriod game. This web version is powered by Ryan, Christine, and Dale.</p>
   </footer>
 
   <script src="main.bundle.js"></script>

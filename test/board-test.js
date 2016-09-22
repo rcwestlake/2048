@@ -51,7 +51,6 @@ describe("board", function() {
     assert.equal(board.cells[15].column, 3);
     assert.equal(board.cells[4].row, 1);
     assert.equal(board.cells[5].value, 0);
-//what is this doing?!
   });
 
   it("should calculate the number of available cells and change as cells are added", function(){
@@ -98,40 +97,14 @@ describe("board", function() {
   });
 });
 
-describe("testing game engine", function() {
-  it("should combine 2 values with null inbetween", function(){
-    var board = new Board(
-      2, 0, 0, 2,
-      2, 0, 0, 2,
-      2, 0, 0, 2,
-      2, 0, 0, 2
-    );
-    board.checkAndChangeValue(1);
-    assert.equal(board.cells[0].value, 4);
-    assert.equal(board.cells[1].value, 0);
-  });
-});
 
 
 describe("testing ability to move in all directions", function() {
-//   beforeEach(function() {
-  //   var board = new Board(
-  //   2, 0, 2, 2,
-  //   2, 4, 0, 2,
-  //   0, 4, 4, 2,
-  //   2, 0, 4, 2
-  // );
-// };
-
-  // afterEach(function() {
-  //   board = {}
-  // })
-
 
   it("should have a function for moving values", function() {
     var board = new Board();
-    assert.isFunction(board.checkAndChangeValue)
-  })
+    assert.isFunction(board.checkAndChangeValue);
+  });
 
 
   it("should combine and move left", function(){
@@ -224,9 +197,9 @@ describe("testing ability to move in all directions", function() {
 });
 
 
-  describe("testing ability to combine with nulls in between", function() {
+  describe("testing move edge cases", function() {
 
-  it("should comebine when moving left", function() {
+  it("should combine when moving left and there are zero values in between", function() {
     var board = new Board(
       2, 0, 0, 2,
       0, 4, 0, 4,
@@ -242,7 +215,7 @@ describe("testing ability to move in all directions", function() {
     assert.equal(board.cells[12].value, 4);
   });
 
-  it("should comebine when moving up", function() {
+  it("should combine when moving up and there are zero values in between", function() {
     var board = new Board(
       2, 0, 2, 0,
       0, 2, 0, 0,
@@ -251,14 +224,14 @@ describe("testing ability to move in all directions", function() {
     );
 
     board.checkAndChangeValue(2);
-    assert.equal(board.cells[0].value, 4)
-    assert.equal(board.cells[1].value, 4)
-    assert.equal(board.cells[2].value, 4)
-    assert.equal(board.cells[3].value, 8)
-    assert.equal(board.cells[15].value, 0)
+    assert.equal(board.cells[0].value, 4);
+    assert.equal(board.cells[1].value, 4);
+    assert.equal(board.cells[2].value, 4);
+    assert.equal(board.cells[3].value, 8);
+    assert.equal(board.cells[15].value, 0);
   });
 
-  it("should comebine when moving right", function() {
+  it("should combine when moving right and there are zero values in between", function() {
     var board = new Board(
       2, 0, 0, 2,
       0, 4, 0, 4,
@@ -267,14 +240,14 @@ describe("testing ability to move in all directions", function() {
     );
 
     board.checkAndChangeValue(3);
-    assert.equal(board.cells[0].value, 0)
-    assert.equal(board.cells[3].value, 4)
-    assert.equal(board.cells[7].value, 8)
-    assert.equal(board.cells[11].value, 4)
-    assert.equal(board.cells[15].value, 4)
+    assert.equal(board.cells[0].value, 0);
+    assert.equal(board.cells[3].value, 4);
+    assert.equal(board.cells[7].value, 8);
+    assert.equal(board.cells[11].value, 4);
+    assert.equal(board.cells[15].value, 4);
   });
 
-  it("should comebine when moving up", function() {
+  it("should combine when moving down and there are zero values in between", function() {
     var board = new Board(
       2, 0, 2, 4,
       0, 2, 0, 4,
@@ -283,60 +256,22 @@ describe("testing ability to move in all directions", function() {
     );
 
     board.checkAndChangeValue(4);
-    assert.equal(board.cells[0].value, 0)
-    assert.equal(board.cells[12].value, 4)
-    assert.equal(board.cells[13].value, 4)
-    assert.equal(board.cells[14].value, 4)
-    assert.equal(board.cells[15].value, 8)
+    assert.equal(board.cells[0].value, 0);
+    assert.equal(board.cells[12].value, 4);
+    assert.equal(board.cells[13].value, 4);
+    assert.equal(board.cells[14].value, 4);
+    assert.equal(board.cells[15].value, 8);
   });
 });
 
-describe("testing other edge cases", function() {
-  it("should not add another cell when nothing has moved or combined and going left", function() {
-
-  var game = new Game();
-  var board = new Board(
-    0, 0, 2, 4,
-    0, 2, 4, 2,
-    0, 0, 2, 4,
-    0, 0, 0, 0
-  );
-
-  var cellsWithValues1 = (board.checkAvailalbeCells.length)
-  board.checkAndChangeValue(1);
-  var cellsWithValues2 = (board.checkAvailalbeCells.length)
-  assert.equal(cellsWithValues1, cellsWithValues2)
-
+describe("testing score functionality", function() {
+  it("should have a function for calculating the score", function() {
+    var cell = new Cell();
+    assert.isFunction(cell.calculateScore);
   });
 
-  it.skip("should not add another cell when nothing has moved or combined and going up", function() {
-  var board = new Board(
-    0, 2, 2, 4,
-    0, 0, 4, 2,
-    0, 0, 2, 4,
-    0, 0, 0, 0
-  );
-
-
-
-  cellsWithValues1 = (board.checkAvailalbeCells.length)
-  board.checkAndChangeValue(2);
-  cellsWithValues2 = (board.checkAvailalbeCells.length)
-  assert.equal(cellsWithValues1, cellsWithValues2)
-  });
-
-  it.skip("should not add another cell when nothing has moved or combined and going right", function() {
-  var board = new Board(
-    0, 0, 2, 4,
-    0, 2, 4, 2,
-    0, 0, 2, 4,
-    0, 0, 0, 0
-  );
-
-  cellsWithValues1 = (board.checkAvailalbeCells.length)
-  board.handleKey(game, event.keyCode(37));
-  cellsWithValues2 = (board.checkAvailalbeCells.length)
-  assert.equal(cellsWithValues1, cellsWithValues2)
-
+  it("should have a function for setting high score", function() {
+    var cell = new Cell();
+    assert.isFunction(cell.setHighScore);
   });
 });

@@ -1,70 +1,158 @@
-html {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
   font-size: 22px;
   height: 100vh;
   width: 100vw;
 }
 
+header {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+  width: 100%;
+}
+
 h1 {
-  background-color: #edc22e;
-  height: 125px;
-  width: 125px;
-  margin: auto;
-  margin-top: 25px;
+  background-color: white;
+  border: 3px solid #504D4D;
+  border-radius: 5px;
+  color: #edc22e;
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 800;
+  min-height: 125px;
+  padding: 0 5px;
+  padding-top: 10px;
+  text-align: center;
+  vertical-align: top;
+}
+
+#logo-js {
+  color: #EA5455;
+}
+
+button {
+  background: rgba(0,0,0,0);
+  border: solid 3px #edc22e;
+  color: #edc22e;
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  height: 50px;
+  width: 150px;
+}
+
+button:hover {
+  background: rgba(0,0,0,0);
+  border: solid 5px #edc22e;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+.game-manager-container {
+  border: 3px solid #504D4D;
+  border-radius: 5px;
+  display: inline-block;
+  min-height: 130px;
+  padding: 0 8px;
+}
+
+.instructions-button {
+  margin-bottom: 35px;
+  text-align: center;
+  width: 100%;
+}
+
+.new-game-button {
+  margin: 20px auto;
+  margin-top: 30px;
+}
+
+.instructions {
+  color: #504D4D;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  max-width: 390px;
+}
+
+
+.score-container {
+  text-align: center;
+}
+
+.score-header {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.current-score, .high-score {
+  color: #000000;
+  font-size: 25px;
+}
+
+.high-score {
+  color: #000000;
+}
+
+.high-score-container {
+  margin-top: 15px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
 .l-game-container {
-  width: 600px;
-  margin: auto;
-  height: 20px;
+  height: 525px;
+  width: 475px;
+  margin: 0 auto;
 }
 
 .l-game-grid {
-  background-color: #bbada0;
+  background-color: #89bdd3;
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  height: 600px;
-  width: 600px;
+  height: 490px;
+  width: 450px;
 }
 
 td {
-  border-radius: 3px;
-  background: rgba(238, 228, 218, 0.35);
+  border-radius: 15px;
+  background: #D1E9EA;
+  position: relative;
   display: inline-block;
-  height: 125px;
-  width: 125px;
+  height: 105px;
+  width: 95px;
+  font-size: 50px;
+  font-weight: 800;
   margin-right: 15px;
   margin-bottom: 10px;
+  text-align: center;
+
 }
 
 td:last-child {
   margin-right: 0;
 }
 
-.l-sidebar {
-  height: 100%;
-  width: 200px;
-  position: relative;
-  top: 200px;
-  left: 650px;
-}
-
 footer {
+  color: #504D4D;
   display: block;
+  font-size: 16px;
   margin: auto;
-  margin-bottom: 30px;
-  width: 600px;
+  width: 465px;
   text-align: center;
-  position: relative;
-  top: 675px;
 }
 
 .tile0 {
@@ -72,45 +160,43 @@ footer {
 }
 
 .tile2 {
-  background-color: #eee4da;
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
+  background-color: #EA5455;
+  color: #f9f6f2;
 }
 
 .tile4 {
-  background-color: #ede0c8;
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
+  background-color: #2794EB;
+  color: #f9f6f2;
 }
 
 .tile8 {
   color: #f9f6f2;
-  background-color: #f2b179;
+  background-color: #0077C0;
 }
 
 .tile16 {
   color: #f9f6f2;
-  background-color: #f59563;
+  background-color: #FF7676;
 }
 
 .tile32 {
   color: #f9f6f2;
-  background-color: #f67c5f;
+  background-color: #FF5656;
 }
 
 .tile64 {
   color: #f9f6f2;
-  background-color: #f65e3b;
+  background-color: #BF382A;
 }
 
 .tile128 {
   color: #f9f6f2;
-  background-color: #edcf72;
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
-  font-size: 45px;
+  background-color: #edcc61;
 }
 
 .tile256 {
   color: #f9f6f2;
-  background-color: #edcc61;
+  background-color: #F7E74A;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
 }
 
@@ -121,37 +207,84 @@ footer {
 }
 
 .tile1024 {
-  color: #f9f6f2;
-  background: #edc850;
+  color: #000000;
+  background: #f9f6f2;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+  font-size: 35px;
  }
 
  .tile2048 {
-  color: #f9f6f2;
-  background: #edc22e;
+  color: #edc22e;
+  background: #f9f6f2;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+  font-size: 35px;
  }
 
- /**/
+ .tile4096 {
+   color: #000000;
+   background: #f9f6f2;
+   font-size: 35px;
+  }
+
+.tile8192 {
+  color: #000000;
+  background: #f9f6f2;
+  font-size: 35px;
+}
+
+.tile16384 {
+  color: #000000;
+  background: #f9f6f2;
+  font-size: 30px;
+}
+
+.tile32768 {
+  color: #000000;
+  background: #f9f6f2;
+  font-size: 30px;
+}
+
+.tile65536 {
+  color: #000000;
+  background: #f9f6f2;
+  font-size: 30px;
+}
+
+.tile131072 {
+  color: #000000;
+  background: #f9f6f2;
+  font-size: 25px;
+}
+
+.tile262144 {
+  color: #000000;
+  background: #f9f6f2;
+  font-size: 25px;
+}
+
+
+ /*RESPONSIVENESS*/
 
  @media screen and (max-width: 725px){
    body {
-     height: 80vh;
+     height: 100vh;
    }
    .l-game-container{
+     height: 400px;
      width: 400px;
      margin: auto;
+     margin-bottom: 25px;
    }
 
    .l-game-grid{
      height: 400px;
      width: 400px;
-
      bottom: 200px;
    }
 
    td {
      border-radius: 2px;
+     font-size: 40px;
      height: 83.3px;
      width: 83.3px;
      margin-right: 10px;
@@ -171,11 +304,11 @@ footer {
 
 @media screen and (max-width: 400px) {
 
-
-
-.l-game-container{
+.l-game-container {
+  height: 300px;
   width: 300px;
   margin: auto;
+  margin-bottom: 25px;
 }
 
 .l-game-grid{
@@ -183,21 +316,16 @@ footer {
   width: 300px;
 }
 
-.l-sidebar {
-  left: 120px;
-  top: -10px;
-}
-
 td {
   border-radius: 1.5px;
   height: 62.5px;
   width: 62.5px;
+  font-size: 35px;
   margin-right: 7.5px;
   margin-bottom: 4.5px;
 }
 
 footer {
+  font-size: 15px;
   width: 300px;
-  top: 450px;
-}
 }
