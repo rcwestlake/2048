@@ -1,6 +1,6 @@
 body {
   box-sizing: border-box;
-  font-family: 'Pontano Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 22px;
   height: 100vh;
   width: 100vw;
@@ -15,7 +15,7 @@ header {
 
 h1 {
   background-color: white;
-  border: 3px solid #000000;
+  border: 3px solid #504D4D;
   border-radius: 5px;
   color: #edc22e;
   display: inline-block;
@@ -34,8 +34,8 @@ h1 {
 
 button {
   background: rgba(0,0,0,0);
-  border: solid 5px #EA5455;
-  color: #EA5455;
+  border: solid 3px #edc22e;
+  color: #edc22e;
   display: block;
   font-size: 15px;
   font-weight: 600;
@@ -45,7 +45,7 @@ button {
 
 button:hover {
   background: rgba(0,0,0,0);
-  border: solid 8px #EA5455;
+  border: solid 5px #edc22e;
   cursor: pointer;
 }
 
@@ -54,7 +54,7 @@ button:focus {
 }
 
 .game-manager-container {
-  border: 3px solid #000000;
+  border: 3px solid #504D4D;
   border-radius: 5px;
   display: inline-block;
   min-height: 130px;
@@ -62,16 +62,18 @@ button:focus {
 }
 
 .instructions-button {
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   text-align: center;
   width: 100%;
 }
 
 .new-game-button {
   margin: 20px auto;
+  margin-top: 30px;
 }
 
 .instructions {
+  color: #504D4D;
   display: inline-block;
   font-size: 15px;
   font-weight: 500;
@@ -98,7 +100,7 @@ button:focus {
 }
 
 .high-score {
-  color: #07889B;
+  color: #000000;
 }
 
 .high-score-container {
@@ -108,8 +110,8 @@ button:focus {
 }
 
 .l-game-container {
-  height: 600px;
-  width: 600px;
+  height: 525px;
+  width: 475px;
   margin: 0 auto;
 }
 
@@ -121,8 +123,8 @@ button:focus {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  height: 600px;
-  width: 600px;
+  height: 500px;
+  width: 475px;
 }
 
 td {
@@ -130,9 +132,9 @@ td {
   background: #D1E9EA;
   position: relative;
   display: inline-block;
-  height: 125px;
-  width: 125px;
-  font-size: 60px;
+  height: 105px;
+  width: 95px;
+  font-size: 50px;
   font-weight: 800;
   margin-right: 15px;
   margin-bottom: 10px;
@@ -145,10 +147,11 @@ td:last-child {
 }
 
 footer {
+  color: #504D4D;
   display: block;
-  font-size: 15px;
-  margin: 50px auto;
-  width: 600px;
+  font-size: 16px;
+  margin: 18px auto;
+  width: 465px;
   text-align: center;
 }
 
