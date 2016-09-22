@@ -161,13 +161,11 @@ footer {
 
 .tile2 {
   background-color: #EA5455;
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
   color: #f9f6f2;
 }
 
 .tile4 {
   background-color: #2794EB;
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
   color: #f9f6f2;
 }
 
@@ -193,13 +191,12 @@ footer {
 
 .tile128 {
   color: #f9f6f2;
-  background-color: #edcf72;
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
+  background-color: #edcc61;
 }
 
 .tile256 {
   color: #f9f6f2;
-  background-color: #edcc61;
+  background-color: #F7E74A;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
 }
 
@@ -220,6 +217,43 @@ footer {
   background: #f9f6f2;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
  }
+
+ .tile4096 {
+   color: #000000;
+   background: #f9f6f2;
+
+  }
+
+.tile8192 {
+  color: #000000;
+  background: #f9f6f2;
+}
+
+.tile16384 {
+  color: #000000;
+  background: #f9f6f2;
+}
+
+.tile32768 {
+  color: #000000;
+  background: #f9f6f2;
+}
+
+.tile65536 {
+  color: #000000;
+  background: #f9f6f2;
+}
+
+.tile131072 {
+  color: #000000;
+  background: #f9f6f2;
+}
+
+.tile262144 {
+  color: #000000;
+  background: #f9f6f2;
+}
+
 
  /*RESPONSIVENESS*/
 
