@@ -12,6 +12,8 @@ The most challenging part of the project was figuring out the logic for moving t
 
 To play our game in the browser, visit [2048](https://rcwestlake.github.io/2048/). The game should be ready when you arrive, simply click on the screen and use your arrow keys to move tiles. The goal is to combine like values and get as high as you can. The game ends when there are no possible combinations and the board is full. Best of luck! 
 
+![game](https://cloud.githubusercontent.com/assets/9679076/19008250/1f06dc3a-8727-11e6-8225-d8de19767497.png)
+
 ###Local Storage
 
 We store the high score in local storage so a user can keep track of how they have done. 
