@@ -18,5 +18,7 @@ To play our game in the browser, visit [2048](https://rcwestlake.github.io/2048/
 
 We store the high score in local storage so a user can keep track of how they have done. 
 
+![storage](https://cloud.githubusercontent.com/assets/9679076/19008313/a6d43ebe-8727-11e6-985a-7044a0eb6776.png)
+
 Built by [Ryan](https://github.com/rcwestlake), [Christine](https://github.com/ccgamble), and [Dale](https://github.com/dshendrickson)
 
